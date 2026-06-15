@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=sales
+      - MYSQL_ROOT_PASSWORD=faturarnota
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+volumes:
+  mysql_data:
