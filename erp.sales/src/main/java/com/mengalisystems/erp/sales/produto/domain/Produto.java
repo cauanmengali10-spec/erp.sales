@@ -16,7 +16,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
 public class Produto {
 
     @Id

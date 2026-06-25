@@ -3,7 +3,6 @@ package com.mengalisystems.erp.sales.venda.domain;
 
 import com.mengalisystems.erp.sales.venda.dto.VendaRequest;
 import com.mengalisystems.erp.sales.venda.dto.VendaResponse;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

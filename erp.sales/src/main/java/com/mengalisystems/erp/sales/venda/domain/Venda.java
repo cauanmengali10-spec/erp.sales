@@ -14,9 +14,9 @@ import java.util.List;
 @Table(name = "venda")
 @Getter
 @Setter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Venda {
 
     @Id
@@ -24,7 +24,7 @@ public class Venda {
     private Long idVenda;
     private LocalDateTime dataVenda;
     private BigDecimal valortotal;
-    @ManyToOne
+    @ManyToOne(optional = true)
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
     @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL)

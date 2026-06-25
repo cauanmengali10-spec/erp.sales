@@ -1,6 +1,7 @@
 package com.mengalisystems.erp.sales.venda.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,9 +16,10 @@ import java.time.LocalDateTime;
 public class VendaResponse {
 
     private Long idVenda;
-    @JsonFormat(pattern = "dd/MM/aa HH:mm:ss")
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime dataVenda;
     private BigDecimal valortotal;
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private String cliente;
 
 }

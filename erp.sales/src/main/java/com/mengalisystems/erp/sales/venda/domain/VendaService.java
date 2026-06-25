@@ -37,8 +37,12 @@ public class VendaService {
     }
 
     public VendaResponse salvar(VendaRequest vendaRequest) {
-        Cliente cliente = clienteRepository.findById(vendaRequest.getIdCliente())
-                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
+
+        Cliente cliente = null;
+        if (vendaRequest.getCpfCliente() != null){
+            cliente = clienteRepository.findByCpf(vendaRequest.getCpfCliente())
+                    .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
+        }
 
         Venda venda = Venda.builder()
                 .cliente(cliente)

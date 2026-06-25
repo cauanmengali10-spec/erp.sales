@@ -16,13 +16,11 @@ public class handlerGlobalException {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorApiResponse> handlerGenericException(Exception exception){
 
-        exception.printStackTrace();
-
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(ErrorApiResponse.builder()
                         .message("INTERNAL SERVER ERROR")
-                        .details(exception.getMessage())
+                        .details("POR FAVOR INFORME AO ADMINISTRADOR DO SISTEMA")
                         .build());
     }
 }
